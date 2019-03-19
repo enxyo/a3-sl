@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# /!\/!\/!\ change file name to restart_hc.sh /!\/!\/!\
+
 case "$1" in
 hc1)
     echo "stopping hc1 ..."
