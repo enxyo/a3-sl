@@ -19,7 +19,9 @@ function checkForDisconnect(client) {
     const exec = require('child_process').exec;
     var script = exec('tmux capture-pane -pt '+ client +' -S -10', (error, stdout, stderr) => {
         if (error) {
-            console.log(`exec sterr: ${stderr}`);
+            time = moment();
+            time_format = time.format('YYYY-MM-DD HH:mm:ss Z');
+            console.log(time_format + ' \\_ headless client not running: ' + client);
             return;
         }
 
@@ -61,7 +63,7 @@ function startHeadlessClient(client) {
     console.log(time_format + ' starting: ' + client + ' ...');
 
     const exec = require('child_process').exec;
-    var script = exec('sh start_' + client + '.sh', (error, stdout, stderr) => {
+    var script = exec('sh restart_hc.sh ' + client, (error, stdout, stderr) => {
         if (error) {
             console.log(`exec sterr: ${stderr}`);
             return;

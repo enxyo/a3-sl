@@ -4,6 +4,8 @@ lazy.sh
 start_hc1.sh
 start_hc2.sh
 start_hc3.sh
+restart_hc.sh
+start_hc.sh
 
 
 # Logs
